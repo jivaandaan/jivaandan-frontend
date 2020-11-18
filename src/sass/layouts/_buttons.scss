@@ -1,0 +1,20 @@
+.btn {
+  padding: 1rem 2rem;
+  min-width: 12rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  box-shadow: 0.1rem 0.1rem 0.5rem rgba($black, 0.3);
+}
+
+.btn--green {
+  background-color: $green;
+  color: $white;
+}
+.btn--red {
+  background-color: $lightRed;
+  color: $white;
+}

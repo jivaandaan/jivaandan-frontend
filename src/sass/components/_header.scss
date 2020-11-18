@@ -1,0 +1,24 @@
+.header {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    @include flexCenterCenter;
+    flex-direction: row;
+  }
+
+  &__img {
+    margin: 0 1rem;
+  }
+
+  &__buttons {
+    width: 50rem;
+    margin: auto;
+    @include flexBetweenCenter;
+    height: 0;
+    transform: translateY(-10rem);
+  }
+}

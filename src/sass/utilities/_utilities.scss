@@ -1,0 +1,45 @@
+.container {
+  max-width: 110rem;
+  margin: auto;
+  height: 100%;
+
+  @include respond(tab-land) {
+    max-width: 80rem;
+  }
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+  @include respond(phone) {
+    max-width: 30rem;
+  }
+}
+
+.logo-box {
+  height: 100%;
+  width: 16rem;
+  @include flexBetweenCenter;
+  cursor: pointer;
+}
+
+.logo {
+  height: 80%;
+  border-radius: 50rem;
+
+  &__text {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+}
+
+.text--bold {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.red {
+  color: #ff0b0b;
+}
+
+.green {
+  color: #7dd780;
+}
