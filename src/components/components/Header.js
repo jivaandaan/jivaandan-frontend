@@ -16,7 +16,7 @@ const Header = () => {
           src={Illus}
           alt="illustration"
           className="header__img"
-          style={{ height: '20rem' }}
+          style={{ height: '25rem' }}
         />
         &nbsp; &nbsp;
         <span className="text--bold">Donate&nbsp;</span>&nbsp;

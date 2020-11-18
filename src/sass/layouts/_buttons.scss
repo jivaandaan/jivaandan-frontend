@@ -3,9 +3,10 @@
   min-width: 12rem;
   border: none;
   background-color: transparent;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-size: 1.6rem;
   outline: none;
   box-shadow: 0.1rem 0.1rem 0.5rem rgba($black, 0.3);
 }
