@@ -31,6 +31,8 @@ body {
 
 .logo-box {
   height: 100%;
+  margin-right: 40px;
+  margin-left: 40px;
   width: 16rem;
   height: 100%;
   display: flex;
