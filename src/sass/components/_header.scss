@@ -1,5 +1,6 @@
 .header {
   height: 90vh;
+  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +11,7 @@
     flex-direction: row;
 
     @include respond(tab-port) {
+      font-size: 1rem;
       transform: translateY(-5rem);
     }
   }
@@ -32,7 +34,7 @@
   }
 
   &__buttons {
-    width: 30rem;
+    width: 35rem;
     margin: auto;
     @include flexBetweenCenter;
     height: 0;

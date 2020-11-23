@@ -31,8 +31,6 @@ body {
 
 .logo-box {
   height: 100%;
-  margin-right: 40px;
-  margin-left: 40px;
   width: 16rem;
   height: 100%;
   display: flex;
@@ -68,11 +66,12 @@ body {
   height: 6rem;
   top: 0;
   width: 100vw;
-  background-color: #cfddea; }
+  background-color: #cfddea;
+  z-index: 10; }
 
 .btn {
-  padding: 1rem 2rem;
-  min-width: 12rem;
+  padding: 1.5rem 2rem;
+  min-width: 15rem;
   border: none;
   background-color: transparent;
   border-radius: 0.5rem;
@@ -81,17 +80,29 @@ body {
   font-size: 1.6rem;
   outline: none;
   box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.3); }
+  @media (max-width: 56.25em) {
+    .btn {
+      min-width: 13rem; } }
 
 .btn--green {
-  background-color: #7dd780;
-  color: #fff; }
+  background-color: transparent;
+  color: #52a241;
+  border: 0.2rem solid #52a241; }
+  .btn--green:hover {
+    color: #fff;
+    background-color: #52a241; }
 
 .btn--red {
-  background-color: #e63232;
-  color: #fff; }
+  background-color: transparent;
+  color: #ff0b0b;
+  border: 0.2rem solid #ff0b0b; }
+  .btn--red:hover {
+    color: #fff;
+    background-color: #ff0b0b; }
 
 .header {
   height: 90vh;
+  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +115,7 @@ body {
     flex-direction: row; }
     @media (max-width: 56.25em) {
       .header__content {
+        font-size: 1rem;
         transform: translateY(-5rem); } }
   .header__img--sm {
     display: none; }
@@ -117,7 +129,7 @@ body {
       .header__img {
         display: none; } }
   .header__buttons {
-    width: 30rem;
+    width: 35rem;
     margin: auto;
     height: 100%;
     display: flex;

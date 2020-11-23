@@ -1,6 +1,6 @@
 .btn {
-  padding: 1rem 2rem;
-  min-width: 12rem;
+  padding: 1.5rem 2rem;
+  min-width: 15rem;
   border: none;
   background-color: transparent;
   border-radius: 0.5rem;
@@ -9,13 +9,29 @@
   font-size: 1.6rem;
   outline: none;
   box-shadow: 0.1rem 0.1rem 0.5rem rgba($black, 0.3);
+
+  @include respond(tab-port) {
+    min-width: 13rem;
+  }
 }
 
 .btn--green {
-  background-color: $green;
-  color: $white;
+  background-color: transparent;
+  color: $green;
+  border: 0.2rem solid $green;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
 }
 .btn--red {
-  background-color: $lightRed;
-  color: $white;
+  background-color: transparent;
+  color: $red;
+  border: 0.2rem solid $red;
+
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
 }
