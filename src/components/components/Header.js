@@ -68,7 +68,7 @@ const Header = () => {
           donor
         </Link>
         <Link
-          to="/"
+          to="/recipient-form"
           className="btn btn--green"
           data-aos="fade-up"
           data-aos-duration="1500"
