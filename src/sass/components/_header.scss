@@ -11,7 +11,7 @@
     flex-direction: row;
 
     @include respond(tab-port) {
-      font-size: 1rem;
+      font-size: 0.8rem;
       transform: translateY(-5rem);
     }
   }
@@ -34,11 +34,11 @@
   }
 
   &__buttons {
-    width: 35rem;
+    width: 100%;
     margin: auto;
     @include flexBetweenCenter;
     height: 0;
-    transform: translateY(-10rem);
+    transform: translateY(-8rem);
 
     @include respond(tab-port) {
       transform: translateY(-5rem);
@@ -46,6 +46,11 @@
     @include respond(phone) {
       transform: translateY(-5rem);
       width: 30rem;
+    }
+
+    & .btn {
+      width: 48%;
+      border-radius: 5rem 50rem 5rem 50rem;
     }
   }
 }

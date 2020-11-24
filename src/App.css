@@ -115,7 +115,7 @@ body {
     flex-direction: row; }
     @media (max-width: 56.25em) {
       .header__content {
-        font-size: 1rem;
+        font-size: 0.8rem;
         transform: translateY(-5rem); } }
   .header__img--sm {
     display: none; }
@@ -129,14 +129,14 @@ body {
       .header__img {
         display: none; } }
   .header__buttons {
-    width: 35rem;
+    width: 100%;
     margin: auto;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 0;
-    transform: translateY(-10rem); }
+    transform: translateY(-8rem); }
     @media (max-width: 56.25em) {
       .header__buttons {
         transform: translateY(-5rem); } }
@@ -144,3 +144,6 @@ body {
       .header__buttons {
         transform: translateY(-5rem);
         width: 30rem; } }
+    .header__buttons .btn {
+      width: 48%;
+      border-radius: 5rem 50rem 5rem 50rem; }

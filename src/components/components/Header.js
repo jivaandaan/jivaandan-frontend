@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Illus from '../../assets/illus.svg';
 
 const Header = () => {
@@ -53,7 +54,8 @@ const Header = () => {
         </span>
       </div>
       <div className="header__buttons">
-        <button
+        <Link
+          to="/donor-form"
           className="btn btn--red"
           data-aos="fade-up"
           data-aos-duration="1500"
@@ -61,8 +63,9 @@ const Header = () => {
           data-aos-anchor-placement="top-bottom"
         >
           donor
-        </button>
-        <button
+        </Link>
+        <Link
+          to="/"
           className="btn btn--green"
           data-aos="fade-up"
           data-aos-duration="1500"
@@ -70,7 +73,7 @@ const Header = () => {
           data-aos-anchor-placement="top-bottom"
         >
           recipient
-        </button>
+        </Link>
       </div>
     </header>
   );

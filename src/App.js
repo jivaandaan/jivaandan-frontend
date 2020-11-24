@@ -1,20 +1,24 @@
 import './App.css';
-import Navbar from './components/layouts/Navbar';
-import Header from './components/components/Header';
-import DonarForm from './components/components/DonarForm';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Home from './components/pages/Home';
+import DonarForm from './components/pages/DonarForm';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from './components/layouts/Navbar';
 
 function App() {
   // animation initialize
   AOS.init();
 
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Header />
-      <DonarForm />
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/donor-form" component={DonarForm} />
+      </Switch>
+    </Router>
   );
 }
 
