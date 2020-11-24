@@ -6,6 +6,7 @@ import DonarForm from './components/pages/DonarForm';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from './components/layouts/Navbar';
+import RecipientForm from './components/pages/RecipientForm';
 
 function App() {
   // animation initialize
@@ -17,6 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/donor-form" component={DonarForm} />
+        <Route path="/recipient-form" component={RecipientForm} />
       </Switch>
     </Router>
   );

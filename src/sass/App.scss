@@ -6,7 +6,9 @@
 @import './utilities/utilities';
 @import './utilities/variables';
 
+@import './components/header';
+@import './components/sections';
+@import './components/form';
+
 @import './layouts/navbar';
 @import './layouts/buttons';
-
-@import './components/header';

@@ -10,7 +10,22 @@
     max-width: 50rem;
   }
   @include respond(phone) {
-    max-width: 30rem;
+    max-width: 40rem;
+  }
+}
+
+.form-container {
+  width: 70rem;
+  margin: 0 auto;
+
+  @include respond(tab-land) {
+    max-width: 60rem;
+  }
+  @include respond(tab-port) {
+    max-width: 40rem;
+  }
+  @include respond(phone) {
+    max-width: 40rem;
   }
 }
 

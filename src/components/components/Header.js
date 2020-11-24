@@ -8,6 +8,9 @@ const Header = () => {
         src={Illus}
         alt="illustration"
         className="header__img--sm"
+        data-aos="zoom-out"
+        data-aos-duration="1500"
+        data-aos-delay="1000"
         style={{ height: '20rem' }}
       />
       <div className="header__content">

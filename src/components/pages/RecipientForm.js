@@ -1,8 +1,8 @@
-const DonarForm = () => {
+const RecipientForm = () => {
   return (
     <div className="section form container">
       <div className="form-container">
-        <h1 className="form__title">Donor Form</h1>
+        <h1 className="form__title">Recipient Form</h1>
         <div className="form__body">
           <form className="form__content" action="/sam">
             <div className="form__group">
@@ -160,4 +160,4 @@ const DonarForm = () => {
   );
 };
 
-export default DonarForm;
+export default RecipientForm;
