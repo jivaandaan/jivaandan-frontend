@@ -9,7 +9,6 @@
   &__content {
     @include flexCenterCenter;
     flex-direction: row;
-    margin: 0 2rem;
 
     @include respond(tab-port) {
       font-size: 0.8rem;

@@ -24,10 +24,7 @@ body {
       max-width: 80rem; } }
   @media (max-width: 56.25em) {
     .container {
-      max-width: 50rem; } }
-  @media (max-width: 37.5em) {
-    .container {
-      max-width: 40rem; } }
+      width: 80%; } }
 
 .form-container {
   width: 70rem;
@@ -37,10 +34,7 @@ body {
       max-width: 60rem; } }
   @media (max-width: 56.25em) {
     .form-container {
-      max-width: 40rem; } }
-  @media (max-width: 37.5em) {
-    .form-container {
-      max-width: 40rem; } }
+      width: 70%; } }
 
 .logo-box {
   height: 100%;
@@ -67,6 +61,9 @@ body {
   @media (max-width: 56.25em) {
     .text--bold {
       font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .text--bold {
+      font-size: 2.5rem; } }
 
 .red {
   color: #ff0b0b; }
@@ -86,8 +83,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    margin: 0 2rem; }
+    flex-direction: row; }
     @media (max-width: 56.25em) {
       .header__content {
         font-size: 0.8rem;
@@ -163,7 +159,7 @@ body {
 
 .btn {
   padding: 1.5rem 2rem;
-  min-width: 15rem;
+  min-width: 15vw;
   border: none;
   background-color: transparent;
   border-radius: 0.5rem;
