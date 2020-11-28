@@ -189,6 +189,11 @@ body {
     color: #fff;
     background-color: #52a241; }
 
+.back--btn {
+  text-decoration: none;
+  color: #000;
+  user-select: none; }
+
 .btn--red {
   background-color: transparent;
   color: #ff0b0b;
