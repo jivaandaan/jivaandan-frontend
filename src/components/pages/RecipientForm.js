@@ -1,8 +1,47 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 const RecipientForm = () => {
+  const [recipientData, setRecipientData] = useState({
+    name: '',
+    email: '',
+    age: '',
+    bloodGroup: '',
+    phone: '',
+    isInfected: 'no',
+    recoveryDate: '',
+    isDonated: 'no',
+    donatedDate: '',
+  });
+
+  const recipientOnChangeHandler = (e) => {
+    const data = { ...recipientData };
+
+    data[e.target.name] = e.target.value;
+
+    setRecipientData(data);
+  };
+
+  const {
+    name,
+    email,
+    age,
+    bloodGroup,
+    phone,
+    isInfected,
+    recoveryDate,
+    isDonated,
+  } = recipientData;
+
   return (
     <div className="section form container">
       <div className="form-container">
-        <h1 className="form__title">Recipient Form</h1>
+        <h1 className="form__title">
+          <Link to="/" className="back--btn">
+            &larr;
+          </Link>
+          &nbsp; Recipient Form
+        </h1>
         <div className="form__body">
           <form className="form__content" action="/sam">
             <div className="form__group">
@@ -14,6 +53,8 @@ const RecipientForm = () => {
                 id="name"
                 className="form__input"
                 placeholder="Full Name"
+                value={name}
+                onChange={recipientOnChangeHandler}
               />
             </div>
             <div className="form__group">
@@ -25,6 +66,8 @@ const RecipientForm = () => {
                 id="email"
                 className="form__input"
                 placeholder="Email ID"
+                value={email}
+                onChange={recipientOnChangeHandler}
               />
             </div>
             <div className="form__group">
@@ -36,16 +79,20 @@ const RecipientForm = () => {
                 id="age"
                 className="form__input"
                 placeholder="Age"
+                value={age}
+                onChange={recipientOnChangeHandler}
               />
             </div>
             <div className="form__group">
               {/* <label htmlFor="blood_group">blood_group:</label> */}
               <select
-                name="blood_group"
+                name="bloodGroup"
                 id="age"
                 className="form__input"
                 placeholder="Blood Group"
                 required
+                value={bloodGroup}
+                onChange={recipientOnChangeHandler}
               >
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -60,83 +107,105 @@ const RecipientForm = () => {
             <div className="form__group">
               {/* <label htmlFor="phone">Phone Number:</label> */}
               <input
-                type="tel"
+                type="number"
                 name="phone"
                 required
                 id="phone"
                 className="form__input"
                 placeholder="Phone Number"
+                value={phone}
+                onChange={recipientOnChangeHandler}
               />
             </div>
             <div>
               <h2 className="form__question">
                 Did you ever test +ve for covid-19 infection?
               </h2>
-              <div className="form__group">
-                <label htmlFor="t1"> Yes</label>
+              <div
+                className="form__group"
+                value={isInfected}
+                onChange={recipientOnChangeHandler}
+              >
+                <label htmlFor="isInfected-yes"> Yes</label>
                 <input
                   type="radio"
-                  name="test"
+                  name="isInfected"
                   value="yes"
                   required
-                  id="t1"
+                  id="isInfected-yes"
                   className=""
                 />
-              </div>
-              <div className="form__group">
-                <label htmlFor="t2"> No</label>
+                <label htmlFor="isInfected-no"> No</label>
                 <input
                   type="radio"
-                  name="test"
+                  name="isInfected"
                   value="No"
                   required
-                  id="t2"
+                  id="isInfected-no"
                   className=""
                 />
               </div>
             </div>
-            <div className="form__group">
-              <label htmlFor="Date1">What was your date of recovery?</label>
-              <input
-                type="date"
-                name="Date1"
-                required
-                id="Date1"
-                className="form__input"
-                style={{ width: '20rem' }}
-              />
-            </div>
+            {isInfected === 'yes' && (
+              <div className="form__group">
+                <label htmlFor="recoveryDate">
+                  What was your date of recovery?
+                </label>
+                <input
+                  type="date"
+                  name="recoveryDate"
+                  required
+                  id="recoveryDate"
+                  className="form__input"
+                  style={{ width: '20rem' }}
+                  value={recoveryDate}
+                  onChange={recipientOnChangeHandler}
+                />
+              </div>
+            )}
             <div>
               <h2 className="form__question">
                 Did you ever Donate plasma before if yes when?
               </h2>
-              <div className="form__group">
-                <label htmlFor="t1">Yes</label>
+              <div
+                className="form__group"
+                value={isDonated}
+                onChange={recipientOnChangeHandler}
+              >
+                <label htmlFor="isDonated-yes">Yes</label>
                 <input
                   type="radio"
-                  name="test1"
+                  name="isDonated"
                   value="yes"
                   required
-                  id="t1"
+                  id="isDonated-yes"
                   className=""
                 />
               </div>
-              <input
-                type="date"
-                name="Date"
-                required
-                id="Date3"
-                className="form__input"
-                style={{ width: '20rem', marginTop: '1rem' }}
-              />
-              <div className="form__group">
-                <label htmlFor="t2">No</label>
+              {isDonated === 'yes' && (
+                <input
+                  type="date"
+                  name="donatedDate"
+                  required
+                  id="donatedDate"
+                  className="form__input"
+                  // value={donatedDate}
+                  onChange={recipientOnChangeHandler}
+                  style={{ width: '20rem', marginTop: '1rem' }}
+                />
+              )}
+              <div
+                className="form__group"
+                value={isDonated}
+                onChange={recipientOnChangeHandler}
+              >
+                <label htmlFor="isDonated-no">No</label>
                 <input
                   type="radio"
-                  name="test1"
-                  value="No"
+                  name="isDonated"
+                  value="no"
                   required
-                  id="t2"
+                  id="isDonated-no"
                   className=""
                 />
               </div>
@@ -150,6 +219,7 @@ const RecipientForm = () => {
                 fontSize: '2rem',
                 margin: '2rem 0 3rem 0',
               }}
+              onClick={() => console.log(recipientData)}
             >
               submit
             </button>

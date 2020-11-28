@@ -29,6 +29,13 @@
     background-color: $green;
   }
 }
+
+.back--btn {
+  text-decoration: none;
+  color: $black;
+  user-select: none;
+}
+
 .btn--red {
   background-color: transparent;
   color: $red;

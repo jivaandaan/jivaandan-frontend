@@ -46,7 +46,7 @@
     }
     @include respond(phone) {
       transform: translateY(-5rem);
-      width: 30rem;
+      width: 100%;
     }
 
     & .btn {
