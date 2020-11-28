@@ -3,15 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './components/pages/Home';
 import DonarForm from './components/pages/DonarForm';
-// import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from './components/layouts/Navbar';
 import RecipientForm from './components/pages/RecipientForm';
 
 function App() {
-  // animation initialize
-  // AOS.init();
-
+  
   return (
     <Router>
       <Navbar />
