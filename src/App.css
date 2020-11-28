@@ -36,22 +36,6 @@ body {
     .form-container {
       width: 70%; } }
 
-.logo-box {
-  height: 100%;
-  width: 16rem;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer; }
-
-.logo {
-  height: 80%;
-  border-radius: 50rem; }
-  .logo__text {
-    font-weight: 500;
-    font-size: 2rem; }
-
 .text--bold {
   font-size: 6rem;
   font-weight: bold; }
@@ -115,7 +99,7 @@ body {
     @media (max-width: 37.5em) {
       .header__buttons {
         transform: translateY(-5rem);
-        width: 30rem; } }
+        width: 100%; } }
     .header__buttons .btn {
       width: 48%; }
 
@@ -156,6 +140,28 @@ body {
   width: 100vw;
   background-color: #cfddea;
   z-index: 10; }
+  .navbar .logo-box {
+    height: 100%;
+    width: 16rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; }
+  .navbar a {
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .navbar a .logo {
+      height: 60%;
+      border-radius: 50rem;
+      margin-right: 0.5rem; }
+      .navbar a .logo__text {
+        font-weight: 500;
+        font-size: 2rem; }
 
 .btn {
   padding: 1.5rem 2rem;

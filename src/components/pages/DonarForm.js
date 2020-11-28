@@ -1,4 +1,37 @@
+import { useState } from 'react';
+
 const DonarForm = () => {
+  const [donorData, setDonorData] = useState({
+    name: '',
+    email: '',
+    age: '',
+    bloodGroup: '',
+    phone: '',
+    isInfected: 'no',
+    recoveryDate: '',
+    isDonated: 'no',
+    donatedDate: '',
+  });
+
+  const donorOnChangeHandler = (e) => {
+    const data = { ...donorData };
+
+    data[e.target.name] = e.target.value;
+
+    setDonorData(data);
+  };
+
+  const {
+    name,
+    email,
+    age,
+    bloodGroup,
+    phone,
+    isInfected,
+    recoveryDate,
+    isDonated,
+  } = donorData;
+
   return (
     <div className="section form container">
       <div className="form-container">
@@ -14,6 +47,8 @@ const DonarForm = () => {
                 id="name"
                 className="form__input"
                 placeholder="Full Name"
+                value={name}
+                onChange={donorOnChangeHandler}
               />
             </div>
             <div className="form__group">
@@ -25,6 +60,8 @@ const DonarForm = () => {
                 id="email"
                 className="form__input"
                 placeholder="Email ID"
+                value={email}
+                onChange={donorOnChangeHandler}
               />
             </div>
             <div className="form__group">
@@ -36,16 +73,20 @@ const DonarForm = () => {
                 id="age"
                 className="form__input"
                 placeholder="Age"
+                value={age}
+                onChange={donorOnChangeHandler}
               />
             </div>
             <div className="form__group">
               {/* <label htmlFor="blood_group">blood_group:</label> */}
               <select
-                name="blood_group"
+                name="bloodGroup"
                 id="age"
                 className="form__input"
                 placeholder="Blood Group"
                 required
+                value={bloodGroup}
+                onChange={donorOnChangeHandler}
               >
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -60,83 +101,105 @@ const DonarForm = () => {
             <div className="form__group">
               {/* <label htmlFor="phone">Phone Number:</label> */}
               <input
-                type="tel"
+                type="number"
                 name="phone"
                 required
                 id="phone"
                 className="form__input"
                 placeholder="Phone Number"
+                value={phone}
+                onChange={donorOnChangeHandler}
               />
             </div>
             <div>
               <h2 className="form__question">
                 Did you ever test +ve for covid-19 infection?
               </h2>
-              <div className="form__group">
-                <label htmlFor="t1"> Yes</label>
+              <div
+                className="form__group"
+                value={isInfected}
+                onChange={donorOnChangeHandler}
+              >
+                <label htmlFor="isInfected-yes"> Yes</label>
                 <input
                   type="radio"
-                  name="test"
+                  name="isInfected"
                   value="yes"
                   required
-                  id="t1"
+                  id="isInfected-yes"
                   className=""
                 />
-              </div>
-              <div className="form__group">
-                <label htmlFor="t2"> No</label>
+                <label htmlFor="isInfected-no"> No</label>
                 <input
                   type="radio"
-                  name="test"
+                  name="isInfected"
                   value="No"
                   required
-                  id="t2"
+                  id="isInfected-no"
                   className=""
                 />
               </div>
             </div>
-            <div className="form__group">
-              <label htmlFor="Date1">What was your date of recovery?</label>
-              <input
-                type="date"
-                name="Date1"
-                required
-                id="Date1"
-                className="form__input"
-                style={{ width: '20rem' }}
-              />
-            </div>
+            {isInfected === 'yes' && (
+              <div className="form__group">
+                <label htmlFor="recoveryDate">
+                  What was your date of recovery?
+                </label>
+                <input
+                  type="date"
+                  name="recoveryDate"
+                  required
+                  id="recoveryDate"
+                  className="form__input"
+                  style={{ width: '20rem' }}
+                  value={recoveryDate}
+                  onChange={donorOnChangeHandler}
+                />
+              </div>
+            )}
             <div>
               <h2 className="form__question">
                 Did you ever Donate plasma before if yes when?
               </h2>
-              <div className="form__group">
-                <label htmlFor="t1">Yes</label>
+              <div
+                className="form__group"
+                value={isDonated}
+                onChange={donorOnChangeHandler}
+              >
+                <label htmlFor="isDonated-yes">Yes</label>
                 <input
                   type="radio"
-                  name="test1"
+                  name="isDonated"
                   value="yes"
                   required
-                  id="t1"
+                  id="isDonated-yes"
                   className=""
                 />
               </div>
-              <input
-                type="date"
-                name="Date"
-                required
-                id="Date3"
-                className="form__input"
-                style={{ width: '20rem', marginTop: '1rem' }}
-              />
-              <div className="form__group">
-                <label htmlFor="t2">No</label>
+              {isDonated === 'yes' && (
+                <input
+                  type="date"
+                  name="donatedDate"
+                  required
+                  id="donatedDate"
+                  className="form__input"
+                  // value={donatedDate}
+                  onChange={donorOnChangeHandler}
+                  style={{ width: '20rem', marginTop: '1rem' }}
+                />
+              )}
+              <div
+                className="form__group"
+                value={isDonated}
+                onChange={donorOnChangeHandler}
+              >
+                <label htmlFor="isDonated-no">No</label>
                 <input
                   type="radio"
-                  name="test1"
-                  value="No"
+                  name="isDonated"
+                  value="no"
                   required
-                  id="t2"
+                  id="isDonated-no"
                   className=""
                 />
               </div>
@@ -150,6 +213,7 @@ const DonarForm = () => {
                 fontSize: '2rem',
                 margin: '2rem 0 3rem 0',
               }}
+              onClick={() => console.log(donorData)}
             >
               submit
             </button>

@@ -5,4 +5,28 @@
   width: 100vw;
   background-color: $blue;
   z-index: 10;
+
+  .logo-box {
+    height: 100%;
+    width: 16rem;
+    @include flexBetweenCenter;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    @include flexCenterCenter;
+
+    .logo {
+      height: 60%;
+      border-radius: 50rem;
+      margin-right: 0.5rem;
+
+      &__text {
+        font-weight: 500;
+        font-size: 2rem;
+      }
+    }
+  }
 }
